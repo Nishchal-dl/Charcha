@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericTabularInline
-from .models import Post, Comment, Vote, Favourite, User
+from .models import Post, Comment, Vote, Favourite, User, Saved
 
 class UserAdmin(admin.ModelAdmin):
     fields = ('username', 'score', 'email', 'is_active', 'is_staff')
@@ -29,3 +29,4 @@ admin.site.register(Post, PostAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Vote, VoteAdmin)
 admin.site.register(Favourite, FavouriteAdmin)
+admin.site.register(Saved)

@@ -1,7 +1,7 @@
 # Add test and quality tools over here
 -r base.txt
 
-coverage==4.5.2
+verage==4.5.2
 django-coverage-plugin==1.6.0
 
-django-silk==3.0.1
+django-silk==3.0.1co

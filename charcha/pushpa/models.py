@@ -6,11 +6,6 @@ from django.conf import settings
 
 GCM_KEY="AAAAg6WtQoE:APA91bH4OzX-QkBbnie4WCMDWmEMf0dIxXRr_TdRB-FWB5GxHgRve6lfBpWuUkuLg-GIJCAPIhkD9Zh6-zFgVPaGQARhn4HayPDGhx35T8s1AaGZXEv0BJVqQBPvp6WZ4Z3VUcOw21Bf"
 class Subscription(models.Model):
-    class Meta:
-        db_table = "user_push_notification_subscriptions"
-        unique_together = [
-            ["user", "endpoint"],
-        ]
     
     # This is a one-to-many relationship because
     # a user can have multiple devices

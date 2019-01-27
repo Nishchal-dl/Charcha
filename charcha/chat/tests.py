@@ -8,24 +8,8 @@ class DiscussionTests(TestCase):
     def setUp(self):
         self._create_team()
 
-    def _create_team(self):
-        team = Team(name="test team")
-        team.save()
-        self.team = team
-
-        ramesh = User.objects.create_user(
-            username="ramesh", password="top_secret")
-        amit = User.objects.create_user(
-            username="amit", password="top_secret")
-        swetha = User.objects.create_user(
-            username="swetha", password="top_secret")
-
-        self.ramesh = TeamMember(team=team, user=ramesh, role=ADMIN)
-        self.ramesh.save()
-        self.amit = TeamMember(team=team, user=amit, role=MEMBER)
-        self.amit.save()
-        self.swetha = TeamMember(team=team, user=swetha, role=MEMBER)
-        self.swetha.save()
+    def test_saved(self):
+        pass
 
     def test_private_message(self):
         ramesh, amit, swetha = self.ramesh, self.amit, self.swetha

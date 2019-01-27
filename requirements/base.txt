@@ -8,3 +8,6 @@ markdown2==2.3.7
 pyelliptic==1.5.8
 pywebpush==1.7.0
 social-auth-app-django==3.1.0
+verage==4.5.2
+django-coverage-plugin==1.6.0
+django-silk==3.0.1

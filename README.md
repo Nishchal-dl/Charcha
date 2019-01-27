@@ -1,3 +1,10 @@
+## This is a simple Git repository for practicing git commands
+
+> A quick heads up
+>
+> This repo may not run as it used to.
+
+
 ## Getting Started
 
 First, install Postgres server

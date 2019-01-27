@@ -389,3 +389,13 @@ class Favourite(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     favourited_on = models.DateTimeField(auto_now_add=True)
     deleted_on = models.DateTimeField(blank=True, null=True)
+
+class Saved(models.Model):
+    post = models.ForeignKey(Post, on_delete= models.CASCADE)
+    comments = models.TextField()
+    added_time = models.DateTimeField(auto_now_add=True)
+    author = models.CharField(max_length = 200)
+
+    class Meta:
+        ordering = ['added_time',]
+        

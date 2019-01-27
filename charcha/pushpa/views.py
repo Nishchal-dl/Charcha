@@ -18,13 +18,6 @@ def subscribe(request):
     if Subscription.objects.filter(user=request.user, 
             endpoint=endpoint).exists():
         return HttpResponse('Already Exists')
-    else:
-        subscription = Subscription(user=request.user, 
-            browser=browser, endpoint=endpoint,
-            auth=auth, p256dh=p256dh)
-        subscription.save()
-        return HttpResponse('Saved')
-
 @login_required
 @require_http_methods(['POST'])
 def unsubscribe(request):

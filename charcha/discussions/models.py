@@ -383,11 +383,11 @@ class Favourite(models.Model):
     # The following 3 fields represent the Comment or Post
     # which has been favourited
     # See Generic Relations in Django's documentation
-    content_type = models.ForeignKey(ContentType, on_delete=models.PROTECT)
-    object_id = models.PositiveIntegerField()
-    content_object = GenericForeignKey('content_type', 'object_id')
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
-    favourited_on = models.DateTimeField(auto_now_add=True)
+    # content_type = models.ForeignKey(ContentType, on_delete=models.PROTECT)
+    # object_id = models.PositiveIntegerField()
+    # content_object = GenericForeignKey('content_type', 'object_id')
+    # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
+    # favourited_on = models.DateTimeField(auto_now_add=True)
     deleted_on = models.DateTimeField(blank=True, null=True)
 
 class Saved(models.Model):
@@ -398,4 +398,3 @@ class Saved(models.Model):
 
     class Meta:
         ordering = ['added_time',]
-        

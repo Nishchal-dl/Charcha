@@ -47,6 +47,19 @@ class DiscussionView(LoginRequiredMixin, View):
         context = {"post": post, "comments": comments, "form": form}
         return render(request, "discussion.html", context=context)
 
+    def Saved(self, request, post_id):
+        post = Post.objects.get_post_with_my_votes(post_id, 
+                    request.user)
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = post.add_comment(form.cleaned_data['text'], request.user)
+            post_url = reverse('discussion', args=[post.id])
+            return HttpResponseRedirect(post_url)
+        else:
+            context = {"post": post, "form": form, "comments": []}
+            return render(request, "discussion.html", context=context)
+
+
     def post(self, request, post_id):
         post = Post.objects.get_post_with_my_votes(post_id, 
                     request.user)

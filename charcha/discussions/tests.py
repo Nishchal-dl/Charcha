@@ -14,13 +14,6 @@ class DiscussionTests(TestCase):
         self.swetha = User.objects.create_user(
             username="swetha", password="top_secret")
         self.anamika = AnonymousUser()
-
-    def new_discussion(self, user, title):
-        post = Post(title=title,
-            text="Does not matter",
-            author=user)
-        post.save()
-        return post
     
     def test_I_cant_vote_for_me(self):
         post = self.new_discussion(self.ramesh, "Ramesh's Biography")
